@@ -1,0 +1,88 @@
+*{
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+}
+.container{
+    padding: 3%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: solid 2px rgb(228, 224, 224);
+    border-radius: 10px;
+    width: 34%;
+    height: 550px;
+    position: relative;
+    left: 33%;
+    top:8%
+
+}
+.content{
+    padding-bottom: 8%;
+}
+
+#signin{
+    font-size:28px;
+    font-weight:normal;
+}
+#g1{
+    color:rgb(108, 108, 232)
+
+}
+#g2{
+    color:rgb(255, 0, 0)
+
+}
+#g3{
+    color:rgb(255, 136, 0)
+}
+#g4{
+    color:rgb(53, 53, 231)
+
+}
+#g5{
+    color:rgb(12, 105, 40)
+
+}
+#g6{
+    color:rgb(255, 17, 0)
+
+}
+span{
+    font-size: 25px;
+    font-family: roboto;
+}
+
+.account{
+
+    font-size: 18px;
+    font-family: roboto;
+}
+#inputem{
+    width: 100%;
+}
+a{
+    text-decoration: none;
+    color: rgb(75, 89, 212);
+    font-weight: 500;
+    font-size: larger;
+}
+.contentbtn {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    
+   
+}
+
+@media only screen and (max-width:600px) {
+    .container{
+
+        width: 100%;
+        border: none;
+    
+        left: 0%;
+    }
+    
+}

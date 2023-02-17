@@ -1,0 +1,137 @@
+*{
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+}
+.container{
+    display: flex;
+    flex-direction: row;
+    width: 60%;
+    height: 670px;
+    border: solid 2px rgb(214, 207, 207);
+    position: relative;
+    left: 20%;
+    padding: 3%;
+    top: 1%;
+    border-radius: 10px;
+}
+.content1{
+    width: 60%;
+    // border: solid 2px red;
+
+}
+
+.content2{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    
+    width: 45%;
+    // border: solid 2px red;
+    padding: 8%;
+}
+
+#g1{
+    color:rgb(108, 108, 232)
+
+}
+#g2{
+    color:rgb(255, 0, 0)
+
+}
+#g3{
+    color:rgb(255, 136, 0)
+}
+#g4{
+    color:rgb(53, 53, 231)
+
+}
+#g5{
+    color:rgb(12, 105, 40)
+
+}
+#g6{
+    color:rgb(255, 17, 0)
+
+}
+span{
+    font-size: 25px;
+    font-family: roboto;
+}
+a{
+    text-decoration: none;
+    color: rgb(75, 89, 212);
+    font-weight: 500;
+    font-size: larger;
+}
+
+.displayinput{
+    display: flex;
+    justify-content: space-between;
+}
+
+#article{
+    display: flex;
+   
+    text-align: center;
+}
+.username{
+    width: 100%;
+}
+.creategmail{
+    padding-bottom: 5%;
+}
+.content1 div{
+    padding-bottom: 5%;
+
+}
+
+.contentbtn{
+
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    // border: 2px solid red;
+    margin-top: 8%;
+
+    
+
+}
+.account{
+    font-size:x-large;
+}
+
+.Confirmpass{
+    display: flex;
+    justify-content: space-between;
+}
+
+
+
+@media only screen and (max-width:700px) {
+    .container{
+            width: 100%;
+            left: 0%;
+            border: none;
+        }
+        .displayinput , .Confirmpass{
+            display: flex;
+            flex-direction: column;
+        
+        }
+        .content2{
+            display: none;
+
+        }
+        .container{
+            width: 100%;
+            left: 0%;
+        }
+        .content1{
+            width: 100%;
+        }
+
+    }
+
+    
