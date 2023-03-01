@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { NoteService } from 'src/app/services/noteService/note.service';
 
 @Component({
@@ -7,6 +7,7 @@ import { NoteService } from 'src/app/services/noteService/note.service';
   styleUrls: ['./icon.component.scss']
 })
 export class IconComponent implements OnInit{
+  @Output() messageEvent = new EventEmitter<string>();
 
   constructor(private noteService:NoteService){}
   ngOnInit(): void {
@@ -25,8 +26,9 @@ export class IconComponent implements OnInit{
       isDeleted: true,
     };
     console.log('getting noteID', data.noteIdList);
-    this.noteService.trashNoteService(data).subscribe((data) => {
+    this.noteService.trashNoteService(data).subscribe((data:any) => {
       console.log('notes moved to bin', data);
+      this.messageEvent.emit(data);
     });
   }
 
@@ -37,8 +39,9 @@ export class IconComponent implements OnInit{
       isArchived: true,
     };
     console.log('getting noteID', data.noteIdList);
-    this.noteService.archiveNoteService(data).subscribe((data) => {
+    this.noteService.archiveNoteService(data).subscribe((data:any) => {
       console.log('notes moved to archive', data);
+      this.messageEvent.emit(data);
     });
   }
 

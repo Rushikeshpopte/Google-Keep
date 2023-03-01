@@ -1,2 +1,3 @@
-<app-create-note></app-create-note>
-<app-displaynote [childArray]="noteArray"></app-displaynote>
+
+<app-create-note (autoRefresh)="recieveMessageFromDisplay($event)"></app-create-note>
+<app-displaynote [childArray]="noteArray" (messageDisplayToGetallnote)="recieveMessageFromDisplay($event)"></app-displaynote>

@@ -34,21 +34,25 @@
   #searchdiv{
     // border: 2px solid red;
     width: 100%;
-    height:100%;
-    margin-top:1%;
+    margin-top:0.1%;
     margin-left: 7%;
+    background: #ddd;
+    display: inline-flex;
+    justify-content: space-between;
+    height: 45px;
+    border-radius: 15px;
   }
 
   
 
   #searchbar{
-    width: 98%;
-    height: 70%;
+    width:98%;
+    height: 80%;
     border-radius: 8px;
     outline: none;
     border: none;
-    word-wrap: break-word;
-    word-break: break-all;
+    background-color:#ddd ;
+    // border: 2px solid red;
   
     
     
@@ -56,7 +60,7 @@
   #searchbar::placeholder{
     font-size: large;
   
-    padding-left: 60px;
+    // padding-left: 60px;
 
   }
 
@@ -70,7 +74,7 @@
 
   #searchicon{
     position: absolute;
-    margin-top: 0.8%;
+    margin-top: 0.5%;
     margin-left: 1%;
 
   }
@@ -95,3 +99,52 @@
   .material-symbols-rounded{
     padding-right: 12%;
   }
+  .adjust{
+    position: relative;
+  }
+  .adjustname{
+    position: absolute;
+  }
+
+
+  ::ng-deep .mat-mdc-list-item-interactive::before{
+    background-color: orange;
+    border-top-right-radius: 50px;
+    border-bottom-right-radius: 50px;
+
+  
+   
+
+
+  }
+
+  ::ng-deep .mat-mdc-list-item-interactive{
+
+    border-top-right-radius: 50px;
+    border-bottom-right-radius: 50px;
+    
+    
+   
+  }
+
+  ::ng-deep .mat-mdc-list-item-interactive:focus{
+  opacity: 0.6;
+  background-color: orange;
+
+  }
+
+
+
+  ::ng-deep .mat-mdc-list-item-interactive:not(:focus):not(.mdc-list-item--disabled):hover::before {
+    opacity: .04;
+    background-color: rgb(100, 97, 93);
+    border-top-right-radius: 50px;
+    border-bottom-right-radius: 50px;
+    
+}
+
+::ng-deep .mat-drawer{
+
+  border: none;
+  background-color:#fafafa;
+}

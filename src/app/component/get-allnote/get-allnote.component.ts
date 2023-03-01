@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { NoteService } from 'src/app/services/noteService/note.service';
 
 @Component({
@@ -8,7 +8,10 @@ import { NoteService } from 'src/app/services/noteService/note.service';
 })
 export class GetAllnoteComponent implements OnInit {
 
+
  noteArray=[];
+
+  message: any;
 
  constructor (private noteService : NoteService){}
  ngOnInit(): void {
@@ -27,6 +30,20 @@ getALlNotes(){
 
     console.log('this is note aarry', this.noteArray)
   })
+}
+
+// received(e : any) {
+//   console.log("note created sucessfully" ,e.status.details)
+//   this.getALlNotes() ;
+// }
+
+// receiveMessage($event : any) {
+//   this.message = $event
+// }
+
+recieveMessageFromDisplay($event : any) {
+this.getALlNotes();
+
 }
 
 }

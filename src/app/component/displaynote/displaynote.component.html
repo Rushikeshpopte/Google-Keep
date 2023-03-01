@@ -1,10 +1,20 @@
 <div class="a">
-    <div class="container" *ngFor="let note of childArray" >
+  <div class="container" *ngFor="let note of childArray">
+ <div id="displaynotecontent">
+  <div>
+    <div class="content1" (click)="updateNote(note)">{{ note.title }}</div>
   
-      <div class="content1" (click)="updateNote(note)">{{ note.title }}</div>
-      <img src="../../" alt="" />
-      <div class="content2" (click)="updateNote(note)">{{ note.description }}</div>
-      <div class="icon">
-      <app-icon [isIcon]="note"> </app-icon>
-      </div>
+    <div class="content2" (click)="updateNote(note)">{{ note.description }}</div>
+
+  </div>
+  <div>
+    <span class="material-symbols-rounded icon">
+      push_pin
+    </span>
+  </div>
+   
+ </div>
+    <div class="icon">
+      <app-icon [isIcon]="note" (messageEvent)="recieveMessageFromTrash($event)"> </app-icon>
     </div>
+  </div>

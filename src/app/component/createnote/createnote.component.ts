@@ -30,9 +30,9 @@ export class CreateNoteComponent implements OnInit {
       title :this.title ,
       description : this.description
     }
-    this.noteService.createnote(req).subscribe((req : any)=>{
-      console.log(req);
-      this.autoRefresh.emit(req)
+    this.noteService.createnote(req).subscribe((result : any)=>{  // if you want make a change
+      console.log(result);
+      this.autoRefresh.emit(result)
 
   })
 
