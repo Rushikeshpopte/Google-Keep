@@ -8,17 +8,44 @@ import {MatCheckboxModule} from '@angular/material/checkbox';
 
 
 import { AppComponent } from './app.component';
-import { SigninComponent } from './component/log-in/log-in.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RegistrationComponent } from './component/registration/registration.component';
 import {FormsModule,ReactiveFormsModule} from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { LoginComponent } from './component/login/login.component';
+import { DashboardComponent } from './component/dashboard/dashboard.component';
+import { MatSidenavModule} from '@angular/material/sidenav';
+import {MatToolbarModule} from '@angular/material/toolbar';
+import {MatIconModule} from '@angular/material/icon';
+import {MatListModule} from '@angular/material/list';
+import { CreateNoteComponent } from './component/createnote/createnote.component';
+import { IconComponent } from './component/icon/icon.component';
+import { GetAllnoteComponent } from './component/get-allnote/get-allnote.component';
+import { DisplaynoteComponent } from './component/displaynote/displaynote.component';
+import { InputdataComponent } from './practised/inputdata/inputdata.component';
+import {MatMenuModule} from '@angular/material/menu';
+import {MatDialogModule} from '@angular/material/dialog';
+import { UpdatenoteComponent } from './component/updatenote/updatenote.component';
+import { BinComponent } from './component/bin/bin.component';
+import { ArchiveComponent } from './component/archive/archive.component';
+
 
 @NgModule({
   declarations: [
     AppComponent,
-    SigninComponent,
-    RegistrationComponent
+    RegistrationComponent,
+    LoginComponent,
+    DashboardComponent,
+    CreateNoteComponent,
+    IconComponent,
+    GetAllnoteComponent,
+    DisplaynoteComponent,
+    InputdataComponent,
+    UpdatenoteComponent,
+    BinComponent,
+    ArchiveComponent
+  
+
   ],
   imports: [
     BrowserModule,
@@ -30,8 +57,13 @@ import { HttpClientModule } from '@angular/common/http';
     MatCheckboxModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule
-    
+    HttpClientModule,
+    MatSidenavModule,
+    MatToolbarModule,
+    MatIconModule,
+    MatListModule,
+    MatMenuModule,
+    MatDialogModule
 
   ],
   providers: [],

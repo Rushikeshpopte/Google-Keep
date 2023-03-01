@@ -1,0 +1,16 @@
+<div class="dialog-box">
+    <div class="input">
+        <input class="no-border" style="width: 80%;" type="text" [(ngModel)]="title">
+        <input class="no-border" style="width: 80%;"  type="text" [(ngModel)]="description">
+    </div>
+
+    <div class="bottom-contain">
+        <div style="width: 350px;">
+            <app-icon></app-icon>
+        </div>
+        <div>
+            <button style="border: none;" (click)="onNoClick()">close</button>
+
+        </div>
+    </div>
+</div>

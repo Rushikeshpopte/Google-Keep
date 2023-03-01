@@ -1,18 +1,20 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { UserServiceService } from 'src/app/service/userService/user-service.service';
+import { UserService } from 'src/app/services/UserService/user.service';
 
 @Component({
-  selector: 'app-log-in',
-  templateUrl: './log-in.component.html',
-  styleUrls: ['./log-in.component.scss']
+  selector: 'app-login',
+  templateUrl: './login.component.html',
+  styleUrls: ['./login.component.scss']
 })
-export class SigninComponent implements OnInit {
+export class LoginComponent implements OnInit{
+  
   signinForm!: FormGroup;
-  submitted = false;
+     submitted = false;
 
-
-  constructor(private formBuilder:FormBuilder, private userService:UserServiceService){}
+  constructor(private formBuilder:FormBuilder,
+    private userService:UserService
+    ){}
 
   ngOnInit() {
     this.signinForm =this.formBuilder.group({
@@ -24,6 +26,8 @@ export class SigninComponent implements OnInit {
 }
 
 onsubmit() {
+  this.submitted=true;
+  
   if (this.signinForm.valid) {
     console.log('onsubmit function called', this.signinForm.value);
     let data = {
@@ -33,8 +37,13 @@ onsubmit() {
     };
 
     this.userService.login(data).subscribe((response:any)=>{
-      console.log('Sign is called', response)
+      console.log('Sign is called', response);
+      localStorage.setItem("token", response.id)
     })
   }
 }
 }
+
+
+
+

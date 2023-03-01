@@ -1,0 +1,33 @@
+
+<div class="icondesign">
+
+    <span class="material-symbols-rounded">
+        add_alert
+    </span>
+    <span class="material-symbols-rounded">
+        person_add
+    </span>
+    <span class="material-symbols-rounded">
+        palette
+    </span>
+    <span class="material-symbols-rounded">
+        panorama
+    </span>
+    <span (click)="archiveNote()" class="material-symbols-rounded">
+        archive
+    </span>
+    <span [matMenuTriggerFor]="menu" class="material-symbols-rounded">
+        more_vert
+    </span>
+    <div>
+    
+        <mat-menu #menu="matMenu" >
+          <button mat-menu-item (click)="trashNote()">Delete note</button>
+          <button mat-menu-item>Add label</button>
+          <button mat-menu-item>Add drawing</button>
+          <button mat-menu-item>Make a copy</button>
+          <button mat-menu-item>Show tick boxes</button>
+        </mat-menu>
+    </div>
+</div>
+

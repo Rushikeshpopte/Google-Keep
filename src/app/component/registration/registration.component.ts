@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { UserService } from 'src/app/services/UserService/user.service';
+
 
 @Component({
   selector: 'app-registration',
@@ -13,7 +15,9 @@ export class RegistrationComponent implements OnInit {
   showPassword: boolean = false;
   
 
-  constructor(private formBuilder:FormBuilder){}
+  
+
+  constructor(private formBuilder:FormBuilder, private userService:UserService){}
 
   ngOnInit() {
     this.registerForm =this.formBuilder.group({
@@ -29,13 +33,24 @@ export class RegistrationComponent implements OnInit {
 onsubmit() {
   if (this.registerForm.valid) {
     console.log('onsubmit function called', this.registerForm.value);
-    let data = {
+    let signUpdata = {
       firstName: this.registerForm.value.firstName,
       lastName: this.registerForm.value.lastName,
       email: this.registerForm.value.email,
       password: this.registerForm.value.password,
       confirmPassword: this.registerForm.value.confirmPassword,
+      service:'advance'
     };
+
+    this.userService.registration(signUpdata).subscribe((response:any)=>{
+
+    
+    console.log ('signup successfull' , response);
+  });
+
+   
+
+
   }
 
 }
@@ -45,10 +60,3 @@ showHidePassword() {
   this.showPassword = !this.showPassword;
 }
 }
-
-
-
-
-
-
-

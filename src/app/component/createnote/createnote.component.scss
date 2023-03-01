@@ -1,0 +1,71 @@
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 40px;
+
+   }
+.parent {
+    width: 45%;
+    border: 1px solid rgba(0,0,0,.2);
+    padding: 10px 20px 10px 20px;
+    border-radius: 12px;
+    box-shadow: 0 1px 2px 0 rgba(60,64,67,0.302),0 2px 6px 2px rgba(60,64,67,0.149);
+    box-shadow: 0cqmaxp;
+    display: flex;
+    flex-flow: column wrap;
+}
+#takenote{
+    font-size: larger;
+    font-weight: 500;
+    color: rgb(86, 86, 86);
+}
+
+.content1 {
+
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+}
+.noteicon span{
+
+    padding-left:30px;
+}
+#titleshow{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+}
+.inputtitle {
+    background-color: rgba(255, 255, 255, 0) ;
+    width: 100%;
+    outline: none;
+    border: none;
+    font-size:larger;
+    // word-wrap: break-word;
+    // white-space: pre-wrap;
+    height: auto;
+    
+}
+
+.icon-button{
+    display: flex;
+    justify-content: space-between;
+}
+.discriptionshow{
+    padding-top: 10px;
+    padding-bottom: 8px;
+}
+#btn1{
+    
+    border: none;
+}
+.icondesign span{
+    padding-right:30px;
+    padding-top: 10px;
+
+}
+
+
+
+

@@ -1,0 +1,37 @@
+.dialog-box {
+    width: 600px;
+    height: fit-content;
+    margin: 12px;
+    border-radius: 16px;
+    padding: 20px 0px 0px 0px ;
+}
+.bottom-contain{
+    // background-color: pink;
+    height: 60px;
+    display: flex;
+    flex-flow: row wrap;
+    align-items: flex-end;
+    justify-content: space-between;
+}
+.input {
+    display: flex;
+    flex-direction: column;
+}
+.no-border {
+    background-color: rgba(255, 255, 255, 0) ;
+    margin-bottom: 10px ;
+    width: 100%;
+    outline: none;
+    border: none;
+}
+::ng-deep .mat-mdc-dialog-container .mdc-dialog__surface {
+    // border-radius: var(--mdc-dialog-container-shape, var(--mdc-shape-medium, 4px));
+    border-radius: 12px;
+}
+
+
+@media only screen and (max-width: 784px) {
+    .dialog-box{
+        width: 500px;
+    }
+}
