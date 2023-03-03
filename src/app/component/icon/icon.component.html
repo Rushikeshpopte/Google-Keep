@@ -7,9 +7,21 @@
     <span class="material-symbols-rounded">
         person_add
     </span>
-    <span class="material-symbols-rounded">
+    <span [matMenuTriggerFor]="menuu" class="material-symbols-rounded">
         palette
     </span>
+    <div>
+    
+        <mat-menu #menuu="matMenu" >
+            <div class="box">
+                <div *ngFor="let color of colors" class="colorbutton">
+                    <button mat-mini-fab [style.background]="color?.code"
+                        (click)="colorPalete(color.code)"></button>
+                </div>
+            </div>
+         
+        </mat-menu>
+    </div>
     <span class="material-symbols-rounded">
         panorama
     </span>

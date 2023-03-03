@@ -1,6 +1,7 @@
 
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AuthenticationGuard } from './authentication.guard';
 import { ArchiveComponent } from './component/archive/archive.component';
 import { BinComponent } from './component/bin/bin.component';
 import { DashboardComponent } from './component/dashboard/dashboard.component';
@@ -15,7 +16,7 @@ const routes: Routes = [
   { path: 'registration', component: RegistrationComponent },
 
   {
-    path: 'home', component: DashboardComponent,
+    path: 'home', component: DashboardComponent,canActivate:[AuthenticationGuard],
     children: [{ path: 'createnote', component: GetAllnoteComponent },
     { path: 'displaynote', component: DisplaynoteComponent },
     { path: 'bin', component: BinComponent },

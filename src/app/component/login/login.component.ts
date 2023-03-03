@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { UserService } from 'src/app/services/UserService/user.service';
 
 @Component({
@@ -13,7 +14,8 @@ export class LoginComponent implements OnInit{
      submitted = false;
 
   constructor(private formBuilder:FormBuilder,
-    private userService:UserService
+    private userService:UserService,
+    private router:Router
     ){}
 
   ngOnInit() {
@@ -23,6 +25,7 @@ export class LoginComponent implements OnInit{
       password:['', [Validators.required, Validators.minLength(6)]]
      
   });
+
 }
 
 onsubmit() {
@@ -38,7 +41,8 @@ onsubmit() {
 
     this.userService.login(data).subscribe((response:any)=>{
       console.log('Sign is called', response);
-      localStorage.setItem("token", response.id)
+      localStorage.setItem("token", response.id);
+      this.router.navigateByUrl('home/createnote')
     })
   }
 }

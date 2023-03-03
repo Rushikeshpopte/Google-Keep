@@ -1,5 +1,5 @@
 <div class="a">
-  <div class="container" *ngFor="let note of childArray">
+  <div [style.background-color]="note.color" class="container" *ngFor="let note of childArray">
  <div id="displaynotecontent">
   <div>
     <div class="content1" (click)="updateNote(note)">{{ note.title }}</div>

@@ -113,6 +113,21 @@ export class NoteService {
       httpOption
     )
    }
+   colorService(data: any) {
+    this.token = localStorage.getItem('token');
+    let httpOption = {
+      headers: new HttpHeaders({
+        'content-type': 'application/json',
+        'Authorization':this.token,
+      }),
+    };
+    return this.httpService.PostService(
+      'notes/changesColorNotes',
+      data,
+      true,
+      httpOption
+    );
+  }
 
   
 }

@@ -28,6 +28,7 @@ import {MatDialogModule} from '@angular/material/dialog';
 import { UpdatenoteComponent } from './component/updatenote/updatenote.component';
 import { BinComponent } from './component/bin/bin.component';
 import { ArchiveComponent } from './component/archive/archive.component';
+import { AuthguardServiceService } from './services/Authentication/authguard-service.service';
 
 
 @NgModule({
@@ -66,7 +67,9 @@ import { ArchiveComponent } from './component/archive/archive.component';
     MatDialogModule
 
   ],
-  providers: [],
+  providers: [
+    AuthguardServiceService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
