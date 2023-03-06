@@ -15,7 +15,7 @@ export class IconComponent implements OnInit{
     { code: '#fbbc04', name: 'orange' },
     { code: '#FFFF00', name: 'yellow' },
     { code: '#ccff90', name: 'green' },
-    { code: '#a7fffeb', name: 'teal' },
+    { code: '#a7ffeb', name: 'teal' },
     { code: '#cbf0f8', name: 'Blue' },
     { code: '#aecbfa', name: 'darkBlue' },
     { code: '#d7aefb', name: 'purple' },
@@ -23,6 +23,14 @@ export class IconComponent implements OnInit{
     { code: '#e6c9a8', name: 'brown' },
     { code: '#e8eaed', name: 'grey' },
   ];
+
+  dateAndTime: Array<any> =[
+    {
+      laterToday: '20:00'
+
+      
+    }
+  ]
 
   constructor(private noteService:NoteService){}
   ngOnInit(): void {
@@ -32,6 +40,7 @@ export class IconComponent implements OnInit{
   isDeleted: any;
   isArchived: any;
   id: any;
+  date:any
 
   trashNote() {
     console.log(this.isIcon.id);
@@ -71,6 +80,26 @@ export class IconComponent implements OnInit{
       });
     
   }
+
+
+
+  setReminder() {
+    console.log(this.date)
+    const rem = new Date(this.date)
+    console.log(rem)
+    let data = {
+      reminder: [rem],
+      noteIdList: [this.isIcon.id],
+      userId: localStorage.getItem('userId'),
+    };
+    this.noteService.remainderService(data).subscribe((res: any) => {
+      console.log('calling remainder api ', res);
+
+      this.messageEvent.emit(res);
+
+    });
+  }
+
 
  
 

@@ -129,5 +129,24 @@ export class NoteService {
     );
   }
 
+  remainderService(data:any){
+
+    this.token = localStorage.getItem('token');
+    let httpOption={
+      headers :new HttpHeaders({
+        'Content-type' : 'application/json',
+        'Authorization':this.token,
+
+      }),
+    };
+    return this.httpService.PostService(
+      'notes/addUpdateReminderNotes',
+      data,
+      true,
+      httpOption
+    )
+
+  }
+
   
 }

@@ -1,9 +1,38 @@
 
 <div class="icondesign">
 
-    <span class="material-symbols-rounded">
-        add_alert
-    </span>
+    <div *ngFor="let note of dateAndTime ">
+
+        <span [matMenuTriggerFor]="rem" class="material-symbols-rounded">
+            add_alert
+        </span>
+
+            <mat-menu #rem="matMenu">
+              Reminder:
+              
+              <button mat-menu-item  >Later Today  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;{{note.laterToday}} </button>
+              <button mat-menu-item >Tomorrow  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;&nbsp;{{note.Tomorrow}}</button>
+              <button mat-menu-item >Next Week    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span>{{note.nextWeek}}</span></button>
+              <button mat-menu-item>
+                
+                Select date and time
+                   <!-- <mat-label>Choose a date</mat-label>  -->
+                  <input style="display: none;" [(ngModel)]="date" matInput [matDatepicker]="datepicker">
+                   <!-- <mat-hint>MM/DD/YYYY</mat-hint>  -->
+                  <mat-datepicker-toggle matIconSuffix [for]="datepicker"></mat-datepicker-toggle>
+                  <mat-datepicker #datepicker>
+                    <mat-datepicker-actions>
+                      <button mat-button matDatepickerCancel>Cancel</button>
+                      <button mat-raised-button color="primary" matDatepickerApply (click)="setReminder()">Apply</button>
+                    </mat-datepicker-actions>
+                  </mat-datepicker>
+                
+              </button>
+              <button mat-menu-item>Select place</button>
+            </mat-menu>
+        
+    </div>
+
     <span class="material-symbols-rounded">
         person_add
     </span>
@@ -14,9 +43,9 @@
     
         <mat-menu #menuu="matMenu" >
             <div class="box">
-                <div *ngFor="let color of colors" class="colorbutton">
-                    <button mat-mini-fab [style.background]="color?.code"
-                        (click)="colorPalete(color.code)"></button>
+                <div *ngFor="let item of colors">
+                    <button mat-mini-fab [style.background]="item?.code"
+                        (click)="colorPalete(item.code)"></button>
                 </div>
             </div>
          

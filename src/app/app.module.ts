@@ -29,6 +29,11 @@ import { UpdatenoteComponent } from './component/updatenote/updatenote.component
 import { BinComponent } from './component/bin/bin.component';
 import { ArchiveComponent } from './component/archive/archive.component';
 import { AuthguardServiceService } from './services/Authentication/authguard-service.service';
+import {MatDatepickerModule} from '@angular/material/datepicker';
+import { MatNativeDateModule } from '@angular/material/core';
+import { MatMomentDateModule } from '@angular/material-moment-adapter';
+
+
 
 
 @NgModule({
@@ -64,7 +69,10 @@ import { AuthguardServiceService } from './services/Authentication/authguard-ser
     MatIconModule,
     MatListModule,
     MatMenuModule,
-    MatDialogModule
+    MatDialogModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
+    MatMomentDateModule 
 
   ],
   providers: [

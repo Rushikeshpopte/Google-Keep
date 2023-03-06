@@ -11,6 +11,12 @@ export class DisplaynoteComponent {
 @Input() childArray: any;
  @Output()messageDisplayToGetallnote = new EventEmitter<string>();
   msg: any;
+
+
+  date = new Date()
+  nextdate = new Date(this.date);
+
+
 constructor(public dialog : MatDialog){
 
 }

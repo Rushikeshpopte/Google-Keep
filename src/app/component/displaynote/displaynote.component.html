@@ -6,15 +6,19 @@
   
     <div class="content2" (click)="updateNote(note)">{{ note.description }}</div>
 
+    <div>
+      {{note.reminder | date: 'medium'}}
+    </div>
+
   </div>
   <div>
     <span class="material-symbols-rounded icon">
       push_pin
     </span>
-  </div>
-   
+  </div>  
  </div>
     <div class="icon">
       <app-icon [isIcon]="note" (messageEvent)="recieveMessageFromTrash($event)"> </app-icon>
     </div>
   </div>
+</div>
